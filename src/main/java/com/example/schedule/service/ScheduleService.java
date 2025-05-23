@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ScheduleService {
@@ -43,6 +44,13 @@ public class ScheduleService {
             responseDtoList.add(dto);
         }
         return responseDtoList;
+    }
+
+    // FindOne
+    public ScheduleResponseDto findOne(Long id) {
+        Schedule schedule = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 존재하지 않습니다. id : " + id));
+        ScheduleResponseDto responseDto = new ScheduleResponseDto(schedule);
+        return responseDto;
     }
 
 }

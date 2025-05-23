@@ -30,4 +30,10 @@ public class ScheduleController {
         List<ScheduleResponseDto> schedules = scheduleService.findAll();
         return schedules;
     }
+
+    @GetMapping("/find-one/{id}")
+    public ScheduleResponseDto findOne(@PathVariable Long id) {
+        ScheduleResponseDto responseDto = scheduleService.findOne(id);
+        return responseDto;
+    }
 }
