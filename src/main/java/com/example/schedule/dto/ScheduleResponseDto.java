@@ -4,7 +4,7 @@ import com.example.schedule.domain.Schedule;
 
 import java.time.LocalDate;
 
-public class CreateResponseDto {
+public class ScheduleResponseDto {
     // 속성
     private Long id;
     private String title;
@@ -16,7 +16,7 @@ public class CreateResponseDto {
     // 생성자
 
 
-    public CreateResponseDto(Schedule schedule) {
+    public ScheduleResponseDto(Schedule schedule) {
         this.id = schedule.getId();
         this.title = schedule.getTitle();
         this.content = schedule.getContent();

@@ -1,6 +1,6 @@
 package com.example.schedule.dto;
 
-public class CreateRequestDto {
+public class ScheduleRequestDto {
     // 속성
     private String title;
     private String content;

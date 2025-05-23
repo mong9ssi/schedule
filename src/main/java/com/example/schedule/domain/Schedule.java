@@ -1,6 +1,6 @@
 package com.example.schedule.domain;
 
-import com.example.schedule.dto.CreateRequestDto;
+import com.example.schedule.dto.ScheduleRequestDto;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,11 +23,11 @@ public class Schedule {
     private LocalDate updatedAt;
 
     // 생성자
-
-
+    // JPA 에서 기본으로 사용됨.
     public Schedule() {}
 
-    public Schedule(CreateRequestDto requestDto) {
+    // Create 시 RequestDto > Entity 를 위한 생성자
+    public Schedule(ScheduleRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.content = requestDto.getContent();
         this.name = requestDto.getName();

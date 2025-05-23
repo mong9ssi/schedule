@@ -1,9 +1,11 @@
 package com.example.schedule.controller;
 
-import com.example.schedule.dto.CreateRequestDto;
-import com.example.schedule.dto.CreateResponseDto;
+import com.example.schedule.dto.ScheduleRequestDto;
+import com.example.schedule.dto.ScheduleResponseDto;
 import com.example.schedule.service.ScheduleService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/schedule")
@@ -18,10 +20,14 @@ public class ScheduleController {
 
     // 기능
     @PostMapping("/create")
-    public CreateResponseDto save(@RequestBody CreateRequestDto requestDto) {
-        CreateResponseDto createResponseDto = scheduleService.save(requestDto);
-        return createResponseDto;
+    public ScheduleResponseDto save(@RequestBody ScheduleRequestDto requestDto) {
+        ScheduleResponseDto scheduleResponseDto = scheduleService.save(requestDto);
+        return scheduleResponseDto;
     }
 
-
+    @GetMapping("/find-all")
+    public List<ScheduleResponseDto> findAll() {
+        List<ScheduleResponseDto> schedules = scheduleService.findAll();
+        return schedules;
+    }
 }
