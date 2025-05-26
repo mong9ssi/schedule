@@ -1,7 +1,9 @@
 package com.example.schedule.dto;
 
 import com.example.schedule.domain.Schedule;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class DeleteResponseDto {
     private Long id;
     private String title;

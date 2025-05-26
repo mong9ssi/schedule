@@ -1,9 +1,11 @@
 package com.example.schedule.dto;
 
 import com.example.schedule.domain.Schedule;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.LocalDate;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ScheduleResponseDto {
     // 속성
     private Long id;
