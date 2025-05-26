@@ -66,19 +66,11 @@ public class Schedule {
     }
 
     // 세터
-    public void setTitle(String title) {
+    public void changeTitle(String title) {
         this.title = title;
     }
 
-    public void setContent(String content) {
+    public void changeContent(String content) {
         this.content = content;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

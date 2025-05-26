@@ -1,5 +1,7 @@
 package com.example.schedule.controller;
 
+import com.example.schedule.dto.DeleteRequestDto;
+import com.example.schedule.dto.DeleteResponseDto;
 import com.example.schedule.dto.ScheduleRequestDto;
 import com.example.schedule.dto.ScheduleResponseDto;
 import com.example.schedule.service.ScheduleService;
@@ -34,6 +36,18 @@ public class ScheduleController {
     @GetMapping("/find-one/{id}")
     public ScheduleResponseDto findOne(@PathVariable Long id) {
         ScheduleResponseDto responseDto = scheduleService.findOne(id);
+        return responseDto;
+    }
+
+    @PatchMapping("/update/{id}")
+    public ScheduleResponseDto update(@RequestBody ScheduleRequestDto requestDto, @PathVariable Long id) {
+        ScheduleResponseDto responseDto = scheduleService.update(requestDto,id);
+        return responseDto;
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public DeleteResponseDto delete(@RequestBody DeleteRequestDto requestDto, @PathVariable Long id) {
+        DeleteResponseDto responseDto = scheduleService.delete(requestDto,id);
         return responseDto;
     }
 }

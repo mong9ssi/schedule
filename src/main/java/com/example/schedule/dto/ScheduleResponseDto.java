@@ -14,8 +14,6 @@ public class ScheduleResponseDto {
     private LocalDate updatedAt;
 
     // 생성자
-
-
     public ScheduleResponseDto(Schedule schedule) {
         this.id = schedule.getId();
         this.title = schedule.getTitle();
